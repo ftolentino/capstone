@@ -7,6 +7,10 @@ Independent Capstone Project for Epicodus: Learning Three.js and React Three Fib
 * 8:40: research Three.js and React Three Fiber docs
 * 9:30: initialize proj to github
 * 9:30 - 11:00: research example projects, scrub YT for examples
+* 11:00 - 12:00: watch a couple different YT videos, bookmarking the ones I found useful to a playlist
+* 1:00p - 3:00p: watch select videos that interested me the most
+* 3:30p - 4:00p: capstone proposal
+* 4:00p - 5:00p: following suggested links on the docs and start to implement sample code
 
 
 ## Available Scripts
