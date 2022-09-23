@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Scene = () => {
+const Sphere = () => {
   return (
     <React.Fragment>
         <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
@@ -18,4 +18,4 @@ const Scene = () => {
   );
 }
 
-export default Scene;
+export default Sphere;

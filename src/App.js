@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Scene from './components/Scene';
+import Sphere from './components/Sphere';
 import './App.css';
 
 extend({OrbitControls});
@@ -56,7 +56,7 @@ function App() {
           <CameraControls />
           <directionalLight intensity={0.5} />
           <Suspense fallback={<Loading />}>
-            <Scene />
+            <Sphere />
           </Suspense>
         </Canvas>
       </div>

@@ -15,6 +15,8 @@ Independent Capstone Project for Epicodus: Learning Three.js and React Three Fib
 #### Friday, 09/23/2022
 * 8:30: reading through different documentation to find a starting point to work off of
 * 9:30 - 10:30: follow along with Three.js fundamental tutorial to set up a scene
+* 10:30 - 11:30: trouble shooting, debug, tutorial setup
+* 12:30 - 1:00: learned how to set up my first 3D scene with an working camera to orbit around a 3D mesh.
 
 
 ## Available Scripts
