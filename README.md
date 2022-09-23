@@ -1,6 +1,12 @@
 # Capstone
 Independent Capstone Project for Epicodus: Learning Three.js and React Three Fiber to experiment making a 3D interactive website
 
+# Technologies Used
+* React
+* Three.js
+* Three Fiber
+
+
 ### Research & Planning Log
 #### Friday, 09/16/2022
 * 8:30: create github repository
@@ -17,6 +23,7 @@ Independent Capstone Project for Epicodus: Learning Three.js and React Three Fib
 * 9:30 - 10:30: follow along with Three.js fundamental tutorial to set up a scene
 * 10:30 - 11:30: trouble shooting, debug, tutorial setup
 * 12:30 - 1:00: learned how to set up my first 3D scene with an working camera to orbit around a 3D mesh.
+* 2:00 - 3:00: research, scrubbing documentation
 
 
 ## Available Scripts
