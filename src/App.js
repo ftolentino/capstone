@@ -1,54 +1,45 @@
-import React, { Suspense, useRef } from 'react';
-import * as THREE from 'three'
-import { Canvas, useFrame, extend, useThree } from '@react-three/fiber';
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Sphere from './components/Sphere';
-import './App.css';
+import { MathUtils } from 'three'
+import { useState } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Points, Point, PointMaterial, OrbitControls } from '@react-three/drei'
+import { useControls } from 'leva'
 
-extend({OrbitControls});
+import './styles.css';
 
-// Texture loader
-const loader = new THREE.TextureLoader()
-const arrow = loader.load('./arrow.png')
-
-// Orbit Camera Controls
-const CameraControls = () => {
-  const {
-    camera,
-    gl: { domElement }
-  } = useThree();
-
-  // Ref to the controls, so that we can update them on every frame using useFrame
-  const controls = useRef();
-  useFrame(state => controls.current.update());
-  return (
-    <orbitControls
-      ref={controls}
-      args={[camera, domElement]}
-      enableZoom={true}
-      maxAzimuthAngle={Math.PI / 4}
-      maxPolarAngle={Math.PI}
-      minAzimuthAngle={-Math.PI / 4}
-      minPolarAngle={0}
-    />
-  );
-};
+const positions = Array.from({ length: 500 }, (i) => [
+  MathUtils.randFloatSpread(10),
+  MathUtils.randFloatSpread(10),
+  MathUtils.randFloatSpread(10),
+])
 
 function App() {
+  const { range } = useControls({ range: { value: positions.length / 2, min: 0, max: positions.length } })
   return (
-    <React.Fragment>
-      <div className='scene-container'>
-        <Canvas style={{ background: "#8c8c8c" }}>
-          <CameraControls />
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          <Suspense fallback={<h1>Loading Scene...</h1>}>
-            <Sphere />
-          </Suspense>
-        </Canvas>
-      </div>
-    </React.Fragment>
-  );
+    <Canvas raycaster={{ params: { Points: { threshold: 0.175 } } }} dpr={[1, 2]} camera={{ position: [0, 0, 10] }}>
+      <Points limit={positions.length} range={range}>
+        <PointMaterial transparent vertexColors size={15} sizeAttenuation={false} depthWrite={false} />
+        {positions.map((position, i) => (
+          <PointEvent key={i} position={position} />
+        ))}
+      </Points>
+      <OrbitControls />
+    </Canvas>
+  )
 }
+
+function PointEvent(props) {
+  const [hovered, setHover] = useState(false)
+  const [clicked, setClick] = useState(false)
+  return (
+    <Point
+      {...props}
+      color={clicked ? 'hotpink' : hovered ? 'white' : 'orange'}
+      onPointerOver={(e) => (e.stopPropagation(), setHover(true))}
+      onPointerOut={(e) => setHover(false)}
+      onClick={(e) => (e.stopPropagation(), setClick((state) => !state))}
+    />
+  )
+}
+
 
 export default App;

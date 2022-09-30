@@ -1,4 +1,5 @@
-/*styles.css*/
+@import url('https://rsms.me/inter/inter.css');
+
 * {
   box-sizing: border-box;
 }
@@ -13,48 +14,16 @@ body,
 }
 
 body {
-  background: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-}
-
-.controls {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: #222222;
-  opacity: 0.8;
-  border-radius: 6px;
-  padding: 0.5rem;
-}
-
-.controls h2 {
+  font-family: inter;
   color: white;
-  font-size: 1rem;
+  background: #252530;
+  user-select: none;
+  -ms-touch-select: none;
 }
 
-.controls .controlGroup {
-  margin-bottom: 0.5rem;
-}
-
-.controls .control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.controls .control input {
-  margin: 0.2rem;
-  border: none;
-  border-radius: 4px;
-  padding: 0.1rem;
-}
-
-.controls .control label {
-  font-size: 0.8rem;
-  color: white;
-  margin-right: 0.5rem;
-  flex: 1 1 0;
+span {
+  display: inline-block;
+  background: black;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
