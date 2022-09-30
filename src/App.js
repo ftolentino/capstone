@@ -6,6 +6,10 @@ import './App.css';
 
 extend({OrbitControls});
 
+// Texture loader
+const loader = new THREE.TextureLoader()
+const arrow = loader.load('./arrow.png')
+
 function Loading() {
   return (
     <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
