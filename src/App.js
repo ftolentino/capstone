@@ -1,4 +1,5 @@
 import React, { Suspense, useRef } from 'react';
+import * as THREE from 'three'
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Sphere from './components/Sphere';
@@ -49,15 +50,32 @@ const CameraControls = () => {
   );
 };
 
+// Objects
+const geometry = new THREE.SphereGeometry( 1, 150, 80 );
+
+// Materials
+
+const material = new THREE.PointsMaterial({
+  size: 0.005
+})
+
+// Mesh
+const spherePoint = new THREE.Points(geometry, material)
+function spherePointMesh() {
+  return <primitiv object={spherePoint} />
+}
+
+
 function App() {
   return (
     <React.Fragment>
       <div className='scene-container'>
-        <Canvas style={{ background: "white" }}>
+        <Canvas style={{ background: "#8c8c8c" }}>
           <CameraControls />
           <ambientLight />
-          <pointLight position={[10, 10, 10]} />
+          <pointLight position={[2, 3, 10]} />
           <Suspense fallback={<Loading />}>
+            {spherePointMesh}
             <Sphere />
           </Suspense>
         </Canvas>
