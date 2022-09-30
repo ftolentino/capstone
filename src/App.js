@@ -23,6 +23,10 @@ function Loading() {
 }
 
 const CameraControls = () => {
+  // Get a reference to the Three.js Camera, and the canvas html element.
+  // We need these to setup the OrbitControls class.
+  // https://threejs.org/docs/#examples/en/controls/OrbitControls
+
   const {
     camera,
     gl: { domElement }
@@ -35,7 +39,7 @@ const CameraControls = () => {
     <orbitControls
       ref={controls}
       args={[camera, domElement]}
-      enableZoom={true}
+      enableZoom={false}
       maxAzimuthAngle={Math.PI / 4}
       maxPolarAngle={Math.PI}
       minAzimuthAngle={-Math.PI / 4}
