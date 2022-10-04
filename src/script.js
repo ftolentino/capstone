@@ -5,7 +5,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 // Texture loader
 const loader = new THREE.TextureLoader();
-const arrow = loader.load("./arrow.png");
+const particleMap = loader.load("./angryCarl.png");
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -41,8 +41,8 @@ const material = new THREE.PointsMaterial({
 });
 
 const particlesMaterial = new THREE.PointsMaterial({
-  size: 0.011,
-  map: arrow,
+  size: 0.008,
+  map: particleMap,
   transparent: true,
   color: "#ff0f00",
 });
