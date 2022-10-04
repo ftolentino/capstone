@@ -1,15 +1,11 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import * as dat from "dat.gui";
-import { useControls } from 'leva';
+
 
 // Texture loader
 const loader = new THREE.TextureLoader();
 const arrow = loader.load("./arrow.png");
-
-// Debug
-const gui = new dat.GUI();
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -37,13 +33,7 @@ particlesGeometry.setAttribute(
   new THREE.BufferAttribute(positionArray, 3)
 );
 
-// useControls leva
-const rangeSlider = () => {
-  const { range } = useControls({ range: {value: positionArray.length / 2, min: 0, max: positionArray.length }});
-  return range;
-}
 
-rangeSlider();
 // Materials
 
 const material = new THREE.PointsMaterial({

@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&display=swap);
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100vh;
+	font-family: 'Poppins';
+	color: white;
+}
+
+.webgl {
+	position: fixed;
+	top: 0;
+	left: 0;
+	outline: none;
+}
+
+.container {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	display: grid;
+	place-content: center;
+	margin-top: 5em;
+}
+
+.content{
+	display: flex;
+	gap: 5em;
+	font-family: Bebas Neue;
+}
+
+/*# sourceMappingURL=main.css.map*/
