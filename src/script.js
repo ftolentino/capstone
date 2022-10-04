@@ -36,6 +36,14 @@ particlesGeometry.setAttribute(
   "position",
   new THREE.BufferAttribute(positionArray, 3)
 );
+
+// useControls leva
+const rangeSlider = () => {
+  const { range } = useControls({ range: {value: positionArray.length / 2, min: 0, max: positionArray.length }});
+  return range;
+}
+
+rangeSlider();
 // Materials
 
 const material = new THREE.PointsMaterial({
