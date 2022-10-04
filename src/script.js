@@ -1,6 +1,12 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import * as dat from "dat.gui";
+
+// Debug
+const gui = new dat.GUI();
+
+// gui.add(material.size, 0, 1, .01).name("material size");
 
 
 // Texture loader
@@ -25,18 +31,18 @@ for (let i = 0; i < particlesCount * 3; i++) {
   // positionArray[i] = Math.random();
   // positionArray[i] = Math.random() - 0.5
   positionArray[i] =
-    (Math.random() - 0.5) * (Math.random() * 7) * (Math.random() / 3);
+  (Math.random() - 0.5) * (Math.random() * 7) * (Math.random() / 3);
 }
 
 particlesGeometry.setAttribute(
   "position",
   new THREE.BufferAttribute(positionArray, 3)
-);
-
-
-// Materials
-
-const material = new THREE.PointsMaterial({
+  );
+  
+  
+  // Materials
+  
+  const material = new THREE.PointsMaterial({
   size: 0.005,
 });
 

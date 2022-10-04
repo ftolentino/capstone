@@ -31,6 +31,16 @@ body {
 	display: flex;
 	gap: 5em;
 	font-family: Bebas Neue;
+	margin: 0 20px;
+}
+
+h1{
+	font-size: 5em;
+	letter-spacing: 3px;
+}
+
+p{
+	font-size: 1.5em;
 }
 
 /*# sourceMappingURL=main.css.map*/
