@@ -31,7 +31,7 @@ for (let i = 0; i < particlesCount * 3; i++) {
   // positionArray[i] = Math.random();
   // positionArray[i] = Math.random() - 0.5
   positionArray[i] =
-  (Math.random() - 0.5) * (Math.random() * 7) * (Math.random() / 3);
+  (Math.random() - 0.5) * (Math.random() * 7) * (Math.random() * 1);
 }
 
 particlesGeometry.setAttribute(
