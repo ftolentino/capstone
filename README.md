@@ -25,6 +25,11 @@ Independent Capstone Project for Epicodus: Learning Three.js and React Three Fib
 * 12:30 - 1:00: learned how to set up my first 3D scene with an working camera to orbit around a 3D mesh.
 * 2:00 - 3:00: research, scrubbing documentation
 
+## Intructions
+* Rotate the sphere by moving your mouse left or right
+* Rotate the particle system by moving your mouse up or down
+* Zoom in and out by scrolling your mouse wheel or holding middle mouse button and moving your mouse back and forth
+* Pan around the scene by holding right click and moving your mouse around
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
