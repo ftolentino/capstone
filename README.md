@@ -4,8 +4,8 @@ Independent Capstone Project for Epicodus: Learning Three.js and React Three Fib
 ![plot](./img/capstoneImage.png)
 
 # Links
-Check it out! This site is hosted using [GitHub Pages](https://ftolentino.github.io/capstone/).
-Credit to DesignCourse for providing awesome tutorial content and boiler plate projects to get started with Three.js [DesignCourse](https://youtu.be/dLYMzNmILQA);
+* Check it out! [Filmer's Three.js experiment](https://ftolentino.github.io/capstone/).
+* Credit to DesignCourse for providing awesome tutorial content and boiler plate projects to get started with Three.js [DesignCourse](https://youtu.be/dLYMzNmILQA);
 
 # Technologies Used
 * React
