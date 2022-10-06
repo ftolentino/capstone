@@ -1,11 +1,13 @@
 # Capstone
 Independent Capstone Project for Epicodus: Learning Three.js and React Three Fiber to experiment making a 3D interactive website
 
+# Link to try the site
+This site is hosted using[GitHub Pages](https://ftolentino.github.io/capstone/).
+
 # Technologies Used
 * React
 * Three.js
 * Three Fiber
-
 
 ### Research & Planning Log
 #### Friday, 09/16/2022
