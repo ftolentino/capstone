@@ -1,17 +1,24 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-// import * as dat from "dat.gui";
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-// Debug
-// const gui = new dat.GUI();
+// Model loader
+const loaderModel = new GLTFLoader();
 
-// gui.add(geometry.scale, 'x', 0, 2).name('Scale X Axis');
+loader.load( './BeardShrimp.glb', function ( gltf ) {
 
+	scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
 
 // Texture loader
 const loader = new THREE.TextureLoader();
-const particleMap = loader.load("./angryCarl.png");
+// const particleMap = loader.load("./angryCarl.png");
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -20,18 +27,19 @@ const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
 
 // Objects
-const geometry = new THREE.SphereGeometry(1, 150, 80);
+const geometry = new THREE.OctahedronGeometry(1, 30, 2);
 
 const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 15000;
+const particlesCount = 5000;
 
 const positionArray = new Float32Array(particlesCount * 3);
 
-for (let i = 0; i < particlesCount * 3; i++) {
+
+for (let i = 0; i < particlesCount; i++) {
   // positionArray[i] = Math.random();
   // positionArray[i] = Math.random() - 0.5
   positionArray[i] =
-  (Math.random() - 0.5) * (Math.random() * 7) * (Math.random() * 1);
+  (Math.random() - 0.5) * (Math.random() * 8) * (Math.random() / 3);
 }
 
 particlesGeometry.setAttribute(
@@ -143,7 +151,7 @@ const tick = () => {
   particlesMesh.rotation.x = -0.1 * elapsedTime;
 
   if (mouseX > 0) {
-    sphere.rotation.y = mouseX * (elapsedTime * -0.00008);
+    sphere.rotation.y = mouseX * (elapsedTime * -0.00003);
     particlesMesh.rotation.y = mouseY * (elapsedTime * 0.0002);
   }
   // Update Orbital Controls
